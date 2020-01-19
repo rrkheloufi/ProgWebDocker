@@ -1,14 +1,4 @@
 services:
-  frontend:
-    container_name: awesome_web
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-    image: vikasraj/awesome_web
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./frontend:/app
   backend:
     container_name: awesome_server
     build:

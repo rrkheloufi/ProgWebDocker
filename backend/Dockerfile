@@ -1,4 +1,4 @@
-FROM node:lts-slim
+FROM node:7
 
 RUN mkdir -p /app
 
@@ -10,6 +10,6 @@ RUN npm install
 
 COPY . /app
 
-CMD node index.js
+CMD node src
 
 EXPOSE 8081

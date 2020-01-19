@@ -1,9 +1,13 @@
-FROM node:lts-slim
+FROM node:7
 
-RUN mkdir -p /usr/src/app
+WORKDIR /app
 
-WORKDIR /usr/src/app
+COPY package.json /app
+
+RUN npm install
+
+COPY . /app
+
+CMD node index.js
 
 EXPOSE 8081
-
-CMD node src

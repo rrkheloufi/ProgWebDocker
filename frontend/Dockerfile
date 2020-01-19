@@ -1,9 +1,13 @@
-FROM node:lts-slim
+FROM node:7
 
-RUN mkdir -p /usr/src/app
+WORKDIR /app
 
-WORKDIR /usr/src/app
+COPY package.json /app
 
+RUN npm install
+
+COPY . /app
+
+CMD npm start
 EXPOSE 3000
 
-CMD [ "npm", "start" ]

@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-CMD ["npm start", "./frontend"]
+CMD npm start frontend
 
 EXPOSE 3000
 

@@ -13,11 +13,17 @@ export function displayMealThumbnail(
   displayboxpagethumbnail,
   box
 ) {
-  let userEmail = auth0Client.getProfile().email;
-  let isUserOwner = !displayboxpagethumbnail; // isUserOwner est à faux quand on est dans une boite. Il est à vrai sinon.
-  if (box != null) {
-    isUserOwner = box.ownerEmail === userEmail;
+  let isUserOwner;
+  if (auth0Client.isAuthenticated()) {
+    let userEmail = auth0Client.getProfile().email;
+    isUserOwner = !displayboxpagethumbnail; // isUserOwner est à faux quand on est dans une boite. Il est à vrai sinon.
+    if (box != null) {
+      isUserOwner = box.ownerEmail === userEmail;
+    }
+  } else {
+    isUserOwner = false;
   }
+
   return (
     <div
       key={meal.idMeal}

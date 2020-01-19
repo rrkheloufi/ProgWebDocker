@@ -1,21 +1,20 @@
-version: "3"
 services:
   frontend:
-    container_name: frontentContainer
+    container_name: frontend
     build:
-      context: ./frontentContainer
+      context: ./frontend
       dockerfile: Dockerfile
-    image: progWeb/frontentContainer
+    image: progWeb/frontend
     ports:
       - "3000:3000"
     volumes:
       - ./frontend:/app
   backend:
-    container_name: backendContainer
+    container_name: backend
     build:
       context: ./backend
       dockerfile: Dockerfile
-    image: progWeb/backendContainer
+    image: progWeb/backend
     ports:
       - "8081:8081"
     volumes:

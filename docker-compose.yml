@@ -1,22 +1,22 @@
 version: "3"
 services:
   frontend:
-    container_name: frontend
+    container_name: awesome_web
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    image: progweb/frontend
+    image: vikasraj/awesome_web
     ports:
       - "3000:3000"
     volumes:
-      - ./frontend:/usr/src/appFrontend
+      - ./frontend:/usr/src/app
   backend:
-    container_name: backend
+    container_name: awesome_server
     build:
       context: ./backend
       dockerfile: Dockerfile
-    image: progweb/backend
+    image: vikasraj/awesome_server
     ports:
       - "8081:8081"
     volumes:
-      - ./backend:/usr/src/appBackend
+      - ./backend:/usr/src/app

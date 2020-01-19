@@ -1,14 +1,8 @@
 FROM node:lts-slim
 
-RUN mkdir -p /usr/src/appFrontend
+RUN mkdir -p /usr/src/app
 
-WORKDIR /usr/src/appFrontend
-
-COPY package.json /usr/src/appFrontend
-COPY package-lock.json /usr/src/appFrontend
-RUN npm install 
-
-COPY . /usr/src/appFrontend
+WORKDIR /usr/src/app
 
 EXPOSE 3000
 

@@ -1,15 +1,9 @@
 FROM node:lts-slim
 
-RUN mkdir -p /usr/src/appBackend
+RUN mkdir -p /usr/src/app
 
-WORKDIR /usr/src/appBackend
-
-COPY package.json /usr/src/appBackend
-COPY package-lock.json /usr/src/appBackend
-RUN npm install 
-
-COPY . /usr/src/appBackend
+WORKDIR /usr/src/app
 
 EXPOSE 8081
 
-CMD node src/index.js
+CMD node src

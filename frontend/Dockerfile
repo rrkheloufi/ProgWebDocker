@@ -1,15 +1,14 @@
-FROM node:lts-slim
+FROM node:10
 
-RUN mkdir -p /app
+WORKDIR /usr/src/app
 
-WORKDIR /app
-
-COPY package.json /app
+COPY package*.json ./
 
 RUN npm install
 
-COPY . /app
+COPY . .
 
-CMD npm start frontend
+CMD ["npm start", "./frontend"]
+
 EXPOSE 3000
 
